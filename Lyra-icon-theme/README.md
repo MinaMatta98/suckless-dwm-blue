@@ -1,5 +1,6 @@
 ## Lyra Icon Theme
 A colorful design icon theme for linux desktops
+**All credit goes to https://github.com/yeyushengfan258/Lyra-icon-theme**
 
 ## Install
 
