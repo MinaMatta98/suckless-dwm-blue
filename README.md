@@ -5,7 +5,7 @@ This is a patch of dwm featuring mainly barpadding, colorbar, fullgaps, hide vac
 
 As of current, this project is in the making.
 
-All credit for the desktop background go to u/baron-digit
+**All credit for the desktop background go to u/baron-digit**
 
 Here is a demonstration of the display manager:
 
