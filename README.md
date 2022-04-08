@@ -1,11 +1,11 @@
-g# suckless-dwm-blue
-This repo features a pre-patched version of the suckless desktop window manager - dwm. Dwm is lightweight and written in (you wont believe it) <span style="color:red">C</span>
+# Suckless-dwm-blue
+This repo features a pre-patched version of the suckless desktop window manager - dwm. Dwm is lightweight and written in (you wont believe it)...  . This makes it extremely lightweight and responsive. This is made especially clear when you contrast the dwm top bar to polybar, which while a good bar extension, is cripplingly slow.
 
-The suckless dwm window manager is known to be difficult to patch. Users are generally capable of integrating a few patches with ease, however, the patches may be difficult to merge and would sometimes conflict each other. 
+You can find the unpatched dwm window manager in the following link: https://dwm.suckless.org/ 
 
-This is a patch of dwm featuring mainly barpadding, colorbar, fullgaps, hide vacant tags, status2d, systray and winicon patches.
+The suckless dwm window manager is known to be difficult to patch. Users are generally capable of integrating a few patches with ease, however, the patches may be difficult to merge and would sometimes conflict each other. Note that I am no expert in C code and am open to criticism.
 
-As of current, this project is in the making.
+**This is a patch of dwm featuring mainly barpadding, colorbar, fullgaps, hide vacant tags, status2d, systray and winicon patches.**
 
 **All credit for the desktop background go to u/baron-digit**
 
