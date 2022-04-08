@@ -4,7 +4,9 @@ Layan is a flat Material Design theme for GTK 3, GTK 2 and Gnome-Shell which sup
 
 This theme is based on materia gtk theme of nana-4. Thanks nana-4 sincerely for his great job!
 
-#### materia gtk theme: https://github.com/nana-4/materia-theme
+All thanks to the original author of the finalised package:
+**https://github.com/vinceliuice/Layan-gtk-theme**, 
+and the original creator of the theme: **materia gtk theme: https://github.com/nana-4/materia-theme**
 
 ## Previews
 ![1](https://cn.opendesktop.org/img/5/d/3/a/7a86d212835c855e62ca9725c0031e6202ae.jpg)
