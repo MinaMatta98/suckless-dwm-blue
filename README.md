@@ -17,3 +17,5 @@ Here is a demonstration of the display manager's "desktop environment":
 ![Arch-Desktop](/Images/Screenshot-3.png)
 # Dwm top bar with systray, dwmblocks, winicons and hidden vacant tags
 ![Arch-Desktop](/Images/Screenshot-4.png)
+# Dwm with lf as the file manager
+![Arch-Desktop](/Images/Screenshot-5.png)
