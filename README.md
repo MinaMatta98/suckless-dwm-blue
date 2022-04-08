@@ -1,5 +1,5 @@
 # Suckless-dwm-blue
-This repo features a pre-patched version of the suckless desktop window manager - dwm. Dwm is lightweight and written in (you wont believe it)...  . This makes it extremely lightweight and responsive. This is made especially clear when you contrast the dwm top bar to polybar, which while a good bar extension, is cripplingly slow.
+This repo features a pre-patched version of the suckless desktop window manager - dwm. Dwm is lightweight and written in (you wont believe it)...  . This makes it extremely lightweight and responsive, which is made especially clear when you contrast the dwm top bar to something like polybar. While polybar is a good bar extension it compartively is cripplingly slow.
 
 You can find the unpatched dwm window manager in the following link: https://dwm.suckless.org/ 
 
@@ -54,3 +54,7 @@ The dwm install, while needing quite a bit of tuning to get working does actuall
 * dwm-winicon-6.2-v2.1: https://dwm.suckless.org/patches/winicon/
 
 These patches generally required a lot of configurations to get working together. Namely, the most complex to get working together would be barpadding, systray, winicon and status2d. This is due to them generally interfering with each others core functionality.
+
+## Dependancies
+The following dependancies are required for Dwm:
+*X
