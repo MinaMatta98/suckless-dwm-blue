@@ -82,7 +82,7 @@ sudo systemctl enable lightdm</pre>
 * Git for cloning
 <pre>sudo pacman -S git</pre>
 
-* **A desktop compositor such as picom or xcompmgr. You will realise that dwm hangs without one.**
+* **A desktop compositor such as picom or xcompmgr. You will realise that dwm hangs without one. Xcompmgr can be used instead of picom and will offer slightly better performance for less bling and rounded corners.**
 <pre>sudo pacman -S picom</pre>
 * feh for setting the background wallpaper
 <pre>sudo pacman -S feh</pre>
@@ -114,6 +114,7 @@ kdeconnect-cli &
 </pre>
 
 Note the following:
+* A #!/usr/bin/bash is not needed as dwm naturally executes the script with 
 * Picom or alternative desktop compositors are essential for a viable experience.
 * The xset command can be ommited. It simply increases scroll speed.
 * xbindkeys and clipmenud will be elaborated on in the dmenu section and dwmblocks will also have its own section. 
