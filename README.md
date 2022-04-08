@@ -97,4 +97,9 @@ This section involves the general theming and will allow for the installation of
 
 **All credits for the icons go to the abovementioned author**
 
- 
+### GTK theme installation ###
+From the main folder ($HOME/suckless-dwm-blue/), install the GKT theme by inputting the following terminal command:
+<pre>./Layan-gtk-theme/install.sh</pre>
+If the command could not execute, then do the following:
+<pre>chmod +rwx $HOME/Layan-gtk-theme/install.sh &&
+./Layan-gtk-theme/install.sh</pre>
