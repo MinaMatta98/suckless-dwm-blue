@@ -1,5 +1,5 @@
 # Suckless-dwm-blue
-This repo features a pre-patched version of the suckless desktop window manager - dwm. Dwm is lightweight and written in (you wont believe it) ... C . This makes it extremely lightweight and responsive, which is made especially clear when you contrast the dwm top bar to something like polybar. While polybar is a good bar extension it compaitively is cripplingly slow.
+This repo features a pre-patched version of the suckless desktop window manager - dwm. Dwm is lightweight and written in (you wont believe it) ... C . This makes it extremely lightweight and responsive, which is made especially clear when you contrast the dwm top bar to something like polybar. While polybar is a good bar extension it comparitively is cripplingly slow.
 
 You can find the unpatched dwm window manager in the following link: https://dwm.suckless.org/ 
 
