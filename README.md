@@ -9,3 +9,4 @@ All credit for the desktop background go to u/baron-digit
 
 ![Arch-Desktop](/Images/Screenshot-1.png)
 ![Arch-Desktop](/Images/Screenshot-2.png)
+![Arch-Desktop](/Images/Screenshot-3.png)
