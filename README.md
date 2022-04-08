@@ -84,6 +84,14 @@ sudo systemctl enable lightdm</pre>
 * feh for setting the background wallpaper
 <pre>sudo pacman -S feh</pre>
 
+## Installation via scripts
+This section will detail installing dwm via scripts.
+
+Initially, git clone this repo into your home directory:
+<pre>clone https://github.com/MinaMatta98/suckless-dwm-blue</pre>
+Then install the patched version of dwm via the following terminal command:
+<pre>sudo make clean install</pre>
+
 ## Startup Application Management ##
 This installation of dwm allows for startup applications to be directly launched from $HOME/.dwm/autostart.sh
 
@@ -109,14 +117,6 @@ Note the following:
 * The xset command can be ommited. It simply increases scroll speed.
 * xbindkeys and clipmenud will be elaborated on in the dmenu section and dwmblocks will also have its own section. 
 
-
-## Installation via scripts
-This section will detail installing dwm via scripts.
-
-Initially, git clone this repo into your home directory:
-<pre>clone https://github.com/MinaMatta98/suckless-dwm-blue</pre>
-Then install the patched version of dwm via the following terminal command:
-<pre>sudo make clean install</pre>
 
 ## General Theming
 This section involves the general theming and will allow for the installation of certain icons and modal colors that will help complete the end user experience. Note that none of these are my own and full credit go to the owners below:
