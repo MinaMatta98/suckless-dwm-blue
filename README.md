@@ -77,6 +77,8 @@ sudo systemctl enable lightdm</pre>
 <pre>sudo pacman -S pulseaudio pulsemixer</pre>
 * GTK for general theming:
 <pre>sudo pacman -S gtk2 gtk3 gtk4</pre>
+* GTK theming tools (will be used in this guide), cli options available also:
+<pre>sudo pacman -S lxappearance-gtk3</pre>
 
 ## Installation via scripts
 This section will detail installing dwm via scripts.
@@ -85,3 +87,12 @@ Initially, git clone this repo into your home directory:
 <pre>clone https://github.com/MinaMatta98/suckless-dwm-blue</pre>
 Then install the patched version of dwm via the following terminal command:
 <pre>sudo make clean install</pre>
+
+## General Theming
+This section involves the general theming and will allow for the installation of certain icons and modal colors that will help complete the end user experience. Note that none of these are my own and full credit go to the owners below:
+* Layan-dark-solid theme: https://github.com/vinceliuice/Layan-gtk-the theme
+** All credits for the theme go to the abovementioned author **
+* Lyra-purple-dark icons: https://github.com/yeyushengfan258/Lyra-icon-theme
+** All credits for the icons go to the abovementioned author **
+
+ 
