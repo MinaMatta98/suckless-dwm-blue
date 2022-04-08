@@ -9,7 +9,7 @@ As of current, this project is in the making.
 
 Here is a demonstration of the display manager's "desktop environment":
 
-# Dwm with Alacritty
+# Dwm with Alacritty, Zsh and Powerlevel10k
 ![Arch-Desktop](/Images/Screenshot-1.png)
 # Dwm demonstrating the master-stack tile layout
 ![Arch-Desktop](/Images/Screenshot-2.png)
