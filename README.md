@@ -56,7 +56,7 @@ The dwm install, while needing quite a bit of tuning to get working does actuall
 These patches generally required a lot of configurations to get working together. Namely, the most complex to get working together would be barpadding, systray, winicon and status2d. This is due to them generally interfering with each others core functionality.
 
 ## Dependancies
-The following dependancies are required for Dwm:
+The following dependancies are required for Dwm, installable through the following terminal commands:
 * X (Xorg Server) :
 <pre><span sytle="color:red">sudo </span>pacman -Sy xorg</pre>
 You would also need your graphics card drivers. Please refer to the following link for Arch: https://wiki.archlinux.org/title/Hardware_video_acceleration. If you use an alternative distribution, please follow the distributions graphics driver installation guide.
@@ -69,4 +69,15 @@ You would also need your graphics card drivers. Please refer to the following li
 * Yahl-libs:
 <pre>sudo pacman -Sy yahl</pre>
 * Imlib2:
-<pre>sudo pacman -S imlib2</pre>
+<pre>sudo pacman -Sy imlib2</pre>
+* A Display Manager, I use lightdm, gdm can also be used but is slower: 
+<pre>sudo pacman -Sy lightdm
+sudo systemctl enable lightdm</pre>
+* For volume control (non-essential, but will lead to a better top bar experience) via pulseaudio and tuning via pulsemixer:
+<pre>sudo pacman -S pulseaudio pulsemixer</pre>
+
+## Installation via scripts
+This section will detail installing dwm via scripts.
+
+Initially, git clone this repo into your home directory:
+<pre>git clone https://github.com/MinaMatta98/suckless-dwm-blue</pre>
