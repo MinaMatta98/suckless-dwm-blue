@@ -9,9 +9,9 @@ All credit for the desktop background go to u/baron-digit
 
 Here is a demonstration of the display manager:
 
-#Dwm with Alacritty
+# Dwm with Alacritty
 ![Arch-Desktop](/Images/Screenshot-1.png)
-#Dwm demonstrating the master-stack tile layout
+# Dwm demonstrating the master-stack tile layout
 ![Arch-Desktop](/Images/Screenshot-2.png)
-#Dwm with dmenu as a launch helper
+# Dwm with dmenu as a launch helper
 ![Arch-Desktop](/Images/Screenshot-3.png)
