@@ -91,8 +91,8 @@ Then install the patched version of dwm via the following terminal command:
 ## General Theming
 This section involves the general theming and will allow for the installation of certain icons and modal colors that will help complete the end user experience. Note that none of these are my own and full credit go to the owners below:
 * Layan-dark-solid theme: https://github.com/vinceliuice/Layan-gtk-the theme
-** All credits for the theme go to the abovementioned author **
+**All credits for the theme go to the abovementioned author**
 * Lyra-purple-dark icons: https://github.com/yeyushengfan258/Lyra-icon-theme
-** All credits for the icons go to the abovementioned author **
+**All credits for the icons go to the abovementioned author**
 
  
