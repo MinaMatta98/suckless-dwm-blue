@@ -87,11 +87,12 @@ sudo systemctl enable lightdm</pre>
 ## Startup Application Management ##
 This installation of dwm allows for startup applications to be directly launched from $HOME/.dwm/autostart.sh
 
-Prior to moving forward, execute the following script into your terminal of choice:
-<pre>./install-bg.sh</pre>
+Prior to moving forward, execute the following script into your terminal of choice within the downloaded folder:
+<pre>chmod +x install-bg.sh && ./install-bg.sh</pre>
 
 A cat ~/.dwm/autostart.sh will reveal the following:
 <pre>
+#!/usr/bin/bash
 numlockx on &
 $HOME/.config/feh/.fehbg &
 picom &
