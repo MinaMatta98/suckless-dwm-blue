@@ -57,4 +57,12 @@ These patches generally required a lot of configurations to get working together
 
 ## Dependancies
 The following dependancies are required for Dwm:
-*X
+* X (Xorg Server) :
+<pre><span sytle="color:red">sudo</span> pacman -Sy xorg</pre>
+* Libxcb:
+<pre>sudo pacman -Sy libxcb</pre>
+* Xdg-utils:
+<pre>sudo pacman -Sy xdg-utils</pre>
+* Nerd-Font-Icons (I will demonstrate with yay, but paru and other download managers can be used. Note that the complete package isn't needed):
+<pre>yay -S nerd-fonts-complete</pre>
+* 
