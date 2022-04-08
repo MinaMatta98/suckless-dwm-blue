@@ -79,6 +79,34 @@ sudo systemctl enable lightdm</pre>
 <pre>sudo pacman -S gtk2 gtk3 gtk4</pre>
 * GTK theming tools (will be used in this guide), cli options available also:
 <pre>sudo pacman -S lxappearance-gtk3</pre>
+* **A desktop compositor such as picom or xcompmgr. You will realise that dwm hangs without one.**
+<pre>sudo pacman -S picom</pre>
+* feh for setting the background wallpaper
+<pre>sudo pacman -S feh</pre>
+
+## Startup Application Management ##
+This installation of dwm allows for startup applications to be directly launched from $HOME/.dwm/autostart.sh
+
+Prior to moving forward, execute the following script into your terminal of choice:
+<pre>./install-bg.sh</pre>
+
+A cat ~/.dwm/autostart.sh will reveal the following:
+<pre>
+numlockx on &
+$HOME/.config/feh/.fehbg &
+picom &
+xbindkeys &
+xset r rate 300 55
+dwmblocks &
+clipmenud &
+kdeconnect-cli &
+</pre>
+
+Note the following:
+* Picom or alternative desktop compositors are essential for a viable experience.
+* The xset command can be ommited. It simply increases scroll speed.
+* xbindkeys and clipmenud will be elaborated on in the dmenu section and dwmblocks will also have its own section. 
+
 
 ## Installation via scripts
 This section will detail installing dwm via scripts.
