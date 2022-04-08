@@ -75,9 +75,13 @@ You would also need your graphics card drivers. Please refer to the following li
 sudo systemctl enable lightdm</pre>
 * For volume control (non-essential, but will lead to a better top bar experience) via pulseaudio and tuning via pulsemixer:
 <pre>sudo pacman -S pulseaudio pulsemixer</pre>
+* GTK for general theming:
+<pre>sudo pacman -S gtk2 gtk3 gtk4</pre>
 
 ## Installation via scripts
 This section will detail installing dwm via scripts.
 
 Initially, git clone this repo into your home directory:
-<pre>git clone https://github.com/MinaMatta98/suckless-dwm-blue</pre>
+<pre>clone https://github.com/MinaMatta98/suckless-dwm-blue</pre>
+Then install the patched version of dwm via the following terminal command:
+<pre>sudo make clean install</pre>
