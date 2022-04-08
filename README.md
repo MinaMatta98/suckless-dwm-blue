@@ -108,3 +108,15 @@ From the main folder ($HOME/suckless-dwm-blue/), install the icon theme by input
 <pre>./Lyra-icon-theme/install.sh</pre>
 If the command could not execute, then do the following:
 <pre>chmod +rwx $HOME/suckless-dwm-blue/Lyra-icon-theme/install.sh && $HOME/suckless-dwm-blue/Lyra-icon-theme/install.sh</pre>
+
+#### GTK and Icon theme activation ###
+Now that the themes have been installed in the system, they must be selected for system use:
+* Start lxappearance from your terminal or launcher of choice
+* Under Widgets, select Layan-dark-solid
+![themeing](/Images/Screenshot-6.png)
+* Under Icons, select Lyra-dark-purple
+![themeing](/Images/Screenshot-7.png)
+* Under Font, select enable antialiasing and hinting
+![themeing](/Images/Screenshot-8.png)
+* Under Other, select enable accessibility in GTK+ applications
+![themeing](/Images/Screenshot-9.png)
