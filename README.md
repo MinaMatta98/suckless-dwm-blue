@@ -7,7 +7,7 @@ As of current, this project is in the making.
 
 **All credit for the desktop background go to u/baron-digit**
 
-Here is a demonstration of the display manager:
+Here is a demonstration of the display manager's "desktop environment":
 
 # Dwm with Alacritty
 ![Arch-Desktop](/Images/Screenshot-1.png)
