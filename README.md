@@ -79,6 +79,9 @@ sudo systemctl enable lightdm</pre>
 <pre>sudo pacman -S gtk2 gtk3 gtk4</pre>
 * GTK theming tools (will be used in this guide), cli options available also:
 <pre>sudo pacman -S lxappearance-gtk3</pre>
+* Git for cloning
+<pre>sudo pacman -S git</pre>
+
 * **A desktop compositor such as picom or xcompmgr. You will realise that dwm hangs without one.**
 <pre>sudo pacman -S picom</pre>
 * feh for setting the background wallpaper
@@ -87,8 +90,8 @@ sudo systemctl enable lightdm</pre>
 ## Installation via scripts
 This section will detail installing dwm via scripts.
 
-Initially, git clone this repo into your home directory:
-<pre>clone https://github.com/MinaMatta98/suckless-dwm-blue</pre>
+Initially, download this repo into your home directory:
+<pre>git clone https://github.com/MinaMatta98/suckless-dwm-blue</pre>
 Then install the patched version of dwm via the following terminal command:
 <pre>sudo make clean install</pre>
 
@@ -100,8 +103,6 @@ Prior to moving forward, execute the following script into your terminal of choi
 
 A cat ~/.dwm/autostart.sh will reveal the following:
 <pre>
-#!/usr/bin/bash
-
 numlockx on &
 $HOME/.config/feh/.fehbg &
 picom &
