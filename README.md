@@ -152,3 +152,4 @@ Now that the themes have been installed in the system, they must be selected for
 ![themeing](/Images/Screenshot-8.png)
 * Under Other, select enable accessibility in GTK+ applications
 ![themeing](/Images/Screenshot-9.png)
+# MinaMatta98.github.io
