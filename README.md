@@ -93,6 +93,7 @@ Prior to moving forward, execute the following script into your terminal of choi
 A cat ~/.dwm/autostart.sh will reveal the following:
 <pre>
 #!/usr/bin/bash
+
 numlockx on &
 $HOME/.config/feh/.fehbg &
 picom &
