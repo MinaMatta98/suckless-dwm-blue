@@ -182,9 +182,16 @@ The default Mod4Key Mask is the super key, therefore, the following applies:
 All windows are independant of each other due to the pertag patch.
 
 ### Customizations ###
-* Colors:
-  All customizations should generally be done through editting the config.def.h file. Every color can be defined in the config, i.e:
+All customizations should generally be done through editting the config.def.h file. 
+
+#### Colors: ####
+Every color can be defined in the config, i.e:
 <pre>static const char col_cyan[]        = "#6666ea";</pre>
 Changing the hexadecimal color in this scenario will change all color sections referencing col_cyan.
 
-
+#### Top bar padding ####
+The config file automatically ships with 4px top and bottom, left and right bar padding. To change this, ammend the padding by editting the following lines:
+<pre>
+static const int vertpad            = 4;       /* vertical padding of bar */
+static const int sidepad            = 4;       /* horizontal padding of bar */
+</pre>
