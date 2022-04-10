@@ -189,15 +189,56 @@ Every color can be defined in the config, i.e:
 <pre>static const char col_cyan[]        = "#6666ea";</pre>
 Changing the hexadecimal color in this scenario will change all color sections referencing col_cyan.
 
-#### Top bar padding: ####
+## Top bar customization ####
+* Padding:
 The config file automatically ships with 4px top and bottom, left and right bar padding. To change this, ammend the padding by editting the following lines:
 <pre>
 static const int vertpad            = 4;       /* vertical padding of bar */
 static const int sidepad            = 4;       /* horizontal padding of bar */
 </pre>
 
-#### Bar Positioning ####
+* Positioning:
 Bar positioning can be changed from top to bottom by altering the following (0-value):
 <pre>
 static const int topbar             = 1;        /* 0 means bottom bar */
 </pre>
+
+* Bar Height:
+Bar Height can be changed by altering the following:
+<pre>
+static const int user_bh            = 26;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
+</pre>
+
+* System tray:
+The system tray can be disabled and enabled through editting the following:
+<pre>
+static const int showsystray        = 1;     /* 0 means no systray */
+</pre>
+
+* Icon sizing and spacing:
+Icon sizing can be changed by altering the following config values:
+<pre>
+#define ICONSIZE (bh - 4)   /* icon size - bar height - 4 */
+#define ICONSPACING 5 /* space between icon and title */
+</pre>
+Note that bh refers to the bar height in px.
+
+* Fonts:
+Fonts can be changed by altering the following line:
+<pre>
+static const char *fonts[]          = {"FiraCode Retina Font:size=10", "Hack Nerd Font:size=12", "FiraCode Nerd Font:size=10", "FuraCode Nerd Font:size=10"};
+</pre>
+Note that these fonts will affect Icon rendering. To check the wether fonts are installed in your system, input the following in the command line:
+<pre>fc-list</pre>
+
+#### Window Management ####
+* Border Pixels:
+Border Pixels can be changed by altering the following:
+<pre>static const unsigned int borderpx  = 2;        /* border pixel of windows */</pre>
+
+* Gaps:
+Gaps between windows can be changed by altering the following:
+<pre>
+static const unsigned int gappx     = 5;        /* gaps between windows */
+</pre>
+
