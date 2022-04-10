@@ -139,7 +139,7 @@ This section involves the general theming and will allow for the installation of
 Prior to installing the theme, ensure that locale is set to UTF-8. For example, I have the following uncommented in my /etc/locale.gen:
 <pre>en_AU.UTF-8 UTF-8</pre>
 For Arch, this can be activated by inputting the following command:
-<pre>locale-gen</pre>
+<pre>sudo locale-gen</pre>
 
 From the main folder ($HOME/suckless-dwm-blue/), install the GKT theme by inputting the following terminal command:
 <pre>./Layan-gtk-theme/install.sh</pre>
@@ -150,7 +150,7 @@ If the command could not execute, then do the following:
 From the main folder ($HOME/suckless-dwm-blue/), install the icon theme by inputting the following terminal command:
 <pre>./Lyra-icon-theme/install.sh</pre>
 If the command could not execute, then do the following:
-<pre>chmod +rwx $HOME/suckless-dwm-blue/Lyra-icon-theme/install.sh && ./$HOME/suckless-dwm-blue/Lyra-icon-theme/install.sh</pre>
+<pre>chmod +rwx $HOME/suckless-dwm-blue/Lyra-icon-theme/install.sh && $HOME/suckless-dwm-blue/Lyra-icon-theme/install.sh</pre>
 
 #### GTK and Icon theme activation ###
 Now that the themes have been installed in the system, they must be selected for system use:
