@@ -183,7 +183,7 @@ All windows are independant of each other due to the pertag patch.
 
 ### Customizations ###
 * Colors:
-All customizations should generally be done through editting the config.def.h file. Every color can be defined in the config, i.e:
+  All customizations should generally be done through editting the config.def.h file. Every color can be defined in the config, i.e:
 <pre>static const char col_cyan[]        = "#6666ea";</pre>
 Changing the hexadecimal color in this scenario will change all color sections referencing col_cyan.
 
