@@ -172,7 +172,15 @@ For a general dark theme with an automatically applied dark mode to supporting w
 The default Mod4Key Mask is the super key, therefore, the following applies:
 * Super + p will open up dmenu for program launching
 * Super + [1-9] will take the user to window [1-9]
-* Super + U will trigger the Centered Master Layout
-* Super + M will trigger the Monocle Layout
+* Super + u will trigger the Centered Master Layout
+* Super + m will trigger the Monocle Layout
 * Super + <c-[0-9]> will add combine tags [0-9] with current
 * Super + [j,k] will move to the left and right windows respectively
+* Super + t will reset the user to the default layout
+* Super + F will fullscreen the contents of the window
+
+All windows are independant of each other due to the pertag patch.
+
+### Customizations ###
+All customizations should generally be done through editting the config.def.h file. Every color can be defined in the config, i.e:
+<pre>static const char col_gray1[]       = "#222222";</pre>
