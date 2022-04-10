@@ -181,13 +181,19 @@ The default Mod4Key Mask is the super key, therefore, the following applies:
 
 All windows are independant of each other due to the pertag patch.
 
+
+
 ### Customizations ###
 All customizations should generally be done through editting the config.def.h file. 
+
+
 
 #### Colors: ####
 Every color can be defined in the config, i.e:
 <pre>static const char col_cyan[]        = "#6666ea";</pre>
 Changing the hexadecimal color in this scenario will change all color sections referencing col_cyan.
+
+
 
 #### Top bar customization ####
 * Padding:
@@ -230,6 +236,8 @@ static const char *fonts[]          = {"FiraCode Retina Font:size=10", "Hack Ner
 </pre>
 Note that these fonts will affect Icon rendering. Icons will be checked against the multiple fonts until a valid icon is drawn. To check the wether fonts are installed in your system, input the following in the command line:
 <pre>fc-list</pre>
+
+
 
 #### Window Management ####
 * Border Pixels:
