@@ -136,6 +136,11 @@ This section involves the general theming and will allow for the installation of
 **All credits for the icons go to the abovementioned author**
 
 ### GTK theme installation
+Prior to installing the theme, ensure that locale is set to UTF-8. For example, I have the following uncommented in my /etc/locale.gen:
+<pre>en_AU.UTF-8 UTF-8</pre>
+For Arch, this can be activated by inputting the following command:
+<pre>locale-gen</pre>
+
 From the main folder ($HOME/suckless-dwm-blue/), install the GKT theme by inputting the following terminal command:
 <pre>./Layan-gtk-theme/install.sh</pre>
 If the command could not execute, then do the following:
@@ -158,4 +163,8 @@ Now that the themes have been installed in the system, they must be selected for
 ![themeing](/Images/Screenshot-8.png)
 * Under Other, select enable accessibility in GTK+ applications
 ![themeing](/Images/Screenshot-9.png)
+
+#### Optimizations ####
+For a general dark theme with an automatically applied dark mode to supporting web-apps input the following command into terminal:
+<pre>echo "gtk-application-prefer-dark-theme=true" >> $HOME/.config/gtk-3.0/settings.ini</pre>
 
