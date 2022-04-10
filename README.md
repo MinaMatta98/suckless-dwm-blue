@@ -168,7 +168,7 @@ Now that the themes have been installed in the system, they must be selected for
 For a general dark theme with an automatically applied dark mode to supporting web-apps input the following command into terminal:
 <pre>echo "gtk-application-prefer-dark-theme=true" >> $HOME/.config/gtk-3.0/settings.ini</pre>
 
-#### Tips and General Use ####
+## Tips and General Use ##
 The default Mod4Key Mask is the super key, therefore, the following applies:
 * Super + p will open up dmenu for program launching
 * Super + [1-9] will take the user to window [1-9]
