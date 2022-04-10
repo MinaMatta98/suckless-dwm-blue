@@ -38,6 +38,7 @@ The dwm install, while needing quite a bit of tuning to get working does actuall
 
 * dwm-activetagindicatorbar-6.2: https://dwm.suckless.org/patches/activetagindicatorbar/
 * dwm-actualfullscreen-20211013-cb3f58a: https://dwm.suckless.org/patches/actualfullscreen/
+* dwm-alwayscenter-20200625-f04cac6.diff: https://dwm.suckless.org/patches/alwayscenter/
 * dwm-autostart-20210120-cb3f58a: https://dwm.suckless.org/patches/autostart/
 * dwm-bar-height-6.2: https://dwm.suckless.org/patches/bar_height/
 * dwm-barpadding-20211020-a786211: https://dwm.suckless.org/patches/barpadding/
@@ -152,4 +153,3 @@ Now that the themes have been installed in the system, they must be selected for
 ![themeing](/Images/Screenshot-8.png)
 * Under Other, select enable accessibility in GTK+ applications
 ![themeing](/Images/Screenshot-9.png)
-# MinaMatta98.github.io
