@@ -189,9 +189,15 @@ Every color can be defined in the config, i.e:
 <pre>static const char col_cyan[]        = "#6666ea";</pre>
 Changing the hexadecimal color in this scenario will change all color sections referencing col_cyan.
 
-#### Top bar padding ####
+#### Top bar padding: ####
 The config file automatically ships with 4px top and bottom, left and right bar padding. To change this, ammend the padding by editting the following lines:
 <pre>
 static const int vertpad            = 4;       /* vertical padding of bar */
 static const int sidepad            = 4;       /* horizontal padding of bar */
+</pre>
+
+#### Bar Positioning ####
+Bar positioning can be changed from top to bottom by altering the following (0-value):
+<pre>
+static const int topbar             = 1;        /* 0 means bottom bar */
 </pre>
