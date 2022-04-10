@@ -104,6 +104,8 @@ This installation of dwm allows for startup applications to be directly launched
 
 Prior to moving forward, execute the following script into your terminal of choice within the downloaded folder:
 <pre>chmod +x install-bg.sh && ./install-bg.sh</pre>
+To ensure that the script is executable, run the following command in your terminal emulator.
+<pre>chmox +x .dwm/autostart.sh</pre>
 
 A cat ~/.dwm/autostart.sh will reveal the following:
 <pre>
@@ -118,7 +120,7 @@ kdeconnect-cli &
 </pre>
 
 Note the following:
-* A #!/usr/bin/bash is not needed as dwm naturally executes the script with 
+* A #!/usr/bin/bash is not needed as dwm naturally executes the script with.
 * Picom or alternative desktop compositors are essential for a viable experience.
 * The xset command can be ommited. It simply increases scroll speed.
 * xbindkeys and clipmenud will be elaborated on in the dmenu section and dwmblocks will also have its own section. 
