@@ -150,7 +150,7 @@ If the command could not execute, then do the following:
 From the main folder ($HOME/suckless-dwm-blue/), install the icon theme by inputting the following terminal command:
 <pre>./Lyra-icon-theme/install.sh</pre>
 If the command could not execute, then do the following:
-<pre>chmod +rwx $HOME/suckless-dwm-blue/Lyra-icon-theme/install.sh && $HOME/suckless-dwm-blue/Lyra-icon-theme/install.sh</pre>
+<pre>chmod +rwx $HOME/suckless-dwm-blue/Lyra-icon-theme/install.sh && ./$HOME/suckless-dwm-blue/Lyra-icon-theme/install.sh</pre>
 
 #### GTK and Icon theme activation ###
 Now that the themes have been installed in the system, they must be selected for system use:
@@ -167,4 +167,3 @@ Now that the themes have been installed in the system, they must be selected for
 #### Optimizations ####
 For a general dark theme with an automatically applied dark mode to supporting web-apps input the following command into terminal:
 <pre>echo "gtk-application-prefer-dark-theme=true" >> $HOME/.config/gtk-3.0/settings.ini</pre>
-
