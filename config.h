@@ -49,10 +49,7 @@ static const Rule rules[] = {
 	{ "Alacritty",      NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
-#define WATCH {.v = (char *[]){ "/bin/sh", "-c", \
-	"st -e \
-	yt $(xprop -id $0 _SURF_URI | cut -d \\\" -f 2)", \
-	winid, NULL } }
+
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
@@ -83,7 +80,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-hp", "firefox, surf, discord", "-hb", "#333333" , "-m", dmenumon, "-fn", dmenufont, "-nb", "#31313a", "-nf", col_gray2, "-sb", col_cyan, "-sf", col_gray4, NULL};
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", "#31313a", "-nf", col_gray2, "-sb", col_cyan, "-sf", col_gray4, NULL};
 static const char *termcmd[]  = { "alacritty", NULL};
 
 static Key keys[] = {

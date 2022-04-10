@@ -228,7 +228,7 @@ Fonts can be changed by altering the following line:
 <pre>
 static const char *fonts[]          = {"FiraCode Retina Font:size=10", "Hack Nerd Font:size=12", "FiraCode Nerd Font:size=10", "FuraCode Nerd Font:size=10"};
 </pre>
-Note that these fonts will affect Icon rendering. To check the wether fonts are installed in your system, input the following in the command line:
+Note that these fonts will affect Icon rendering. Icons will be checked against the multiple fonts until a valid icon is drawn. To check the wether fonts are installed in your system, input the following in the command line:
 <pre>fc-list</pre>
 
 #### Window Management ####
@@ -242,3 +242,16 @@ Gaps between windows can be changed by altering the following:
 static const unsigned int gappx     = 5;        /* gaps between windows */
 </pre>
 
+* Master/Stack area ratio:
+The size ratio between master and stack windows can be changed by altering the following:
+<pre>
+static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+</pre>
+
+* Window Swallowing:
+Window swallowing refers to the process where an application is absorbed by another. This is useful if an application opens inside a terminal. This installation of dwm assumes Alacritty to be the terminal of choice. If this is not the case, edit the "Alacritty" string in the following line:
+<pre>
+static const Rule rules[] = {
+	{ "Alacritty",      NULL,     NULL,           0,         0,          1,           0,        -1 },
+</pre>
+Note that the class of application can be found through running xprop in the terminal, selecting the terminal application and looking for the name in the WM_CLASS token.
