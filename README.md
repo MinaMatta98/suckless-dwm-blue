@@ -58,21 +58,24 @@ These patches generally required a lot of configurations to get working together
 
 ## Dependancies
 The following dependancies are required for Dwm, installable through the following terminal commands:
+* Developer tools:
+<pre>sudo pacman -S base-devel</pre>
+This will be required for the compilation of the dwm binaries.
 * X (Xorg Server) :
 <pre><span sytle="color:red">sudo </span>pacman -Sy xorg</pre>
 You would also need your graphics card drivers. Please refer to the following link for Arch: https://wiki.archlinux.org/title/Hardware_video_acceleration. If you use an alternative distribution, please follow the distributions graphics driver installation guide.
 * Libxcb:
-<pre>sudo pacman -Sy libxcb</pre>
+<pre>sudo pacman -S libxcb</pre>
 * Xdg-utils:
-<pre>sudo pacman -Sy xdg-utils</pre>
+<pre>sudo pacman -S xdg-utils</pre>
 * Nerd-Font-Icons (I will demonstrate with yay, but paru and other download managers can be used. Note that the complete package isn't needed):
 <pre>yay -S nerd-fonts-complete</pre>
 * Yahl-libs:
-<pre>sudo pacman -Sy yahl</pre>
+<pre>sudo pacman -S yahl</pre>
 * Imlib2:
-<pre>sudo pacman -Sy imlib2</pre>
+<pre>sudo pacman -S imlib2</pre>
 * A Display Manager, I use lightdm, gdm can also be used but is slower: 
-<pre>sudo pacman -Sy lightdm
+<pre>sudo pacman -S lightdm
 sudo systemctl enable lightdm</pre>
 * For volume control (non-essential, but will lead to a better top bar experience) via pulseaudio and tuning via pulsemixer:
 <pre>sudo pacman -S pulseaudio pulsemixer</pre>
@@ -153,3 +156,4 @@ Now that the themes have been installed in the system, they must be selected for
 ![themeing](/Images/Screenshot-8.png)
 * Under Other, select enable accessibility in GTK+ applications
 ![themeing](/Images/Screenshot-9.png)
+
