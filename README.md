@@ -44,6 +44,7 @@ The dwm install, while needing quite a bit of tuning to get working does actuall
 * dwm-barpadding-20211020-a786211: https://dwm.suckless.org/patches/barpadding/
 * dwm-centeredmaster-6.1: https://dwm.suckless.org/patches/centeredmaster/
 * dwm-colorbar-6.2: https://dwm.suckless.org/patches/colorbar/
+* dwm-decorhints-6.2: https://dwm.suckless.org/patches/decoration_hints/
 * dwm-focusonnetactive-6.2: https://dwm.suckless.org/patches/focusonnetactive/
 * dwm-fullgaps-6.2: https://dwm.suckless.org/patches/fullgaps/
 * dwm-hide_vacant_tags-6.2: https://dwm.suckless.org/patches/hide_vacant_tags/
