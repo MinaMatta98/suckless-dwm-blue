@@ -17,8 +17,8 @@ static const int sidepad            = 4;       /* horizontal padding of bar */
 #define ICONSIZE (bh - 4)   /* icon size - bar height - 4 */
 #define ICONSPACING 5 /* space between icon and title */
 static const int user_bh            = 26;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
-static const char *fonts[]          = {"FiraCode Retina Font:size=10", "Hack Nerd Font:size=12", "FiraCode Nerd Font:size=10", "FuraCode Nerd Font:size=10"};
-static const char dmenufont[]       = "FiraMono Nerd Font Mono:size=10";
+static const char *fonts[]          = {"FiraCode Retina Font:size=10", "Hack Nerd Font:size=12", "JetBrainsMono Nerd Font: size=12"};
+static const char dmenufont[]       = "MesloLGL Nerd Font:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#6666ea";
 static const char col_gray3[]       = "#29084d";
@@ -44,9 +44,10 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
+	{ "Gimp",    NULL,     NULL,           0,         0,          0,           0,        -1 },
 	{ "Firefox", NULL,     NULL,           0,    0,          0,          -1,        -1 },
 	{ "Alacritty",      NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ "tabbed",      NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 #define WATCH {.v = (char *[]){ "/bin/sh", "-c", \
@@ -84,7 +85,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-hp", "firefox, surf, discord", "-hb", "#333333" , "-m", dmenumon, "-fn", dmenufont, "-nb", "#31313a", "-nf", col_gray2, "-sb", col_cyan, "-sf", col_gray4, NULL};
-static const char *termcmd[]  = { "alacritty", NULL};
+static const char *termcmd[]  = { "tabbed", "-c", "alacritty", "--embed", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */

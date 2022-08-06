@@ -19,7 +19,7 @@
  * Keys and tagging rules are organized as arrays and defined in config.h.
  *
  * To understand everything else, start reading main().
- */
+*/
 #include <errno.h>
 #include <locale.h>
 #include <signal.h>
@@ -78,13 +78,6 @@
 #define VERSION_MAJOR               0
 #define VERSION_MINOR               0
 #define XEMBED_EMBEDDED_VERSION (VERSION_MAJOR << 16) | VERSION_MINOR
-
-#define MWM_HINTS_FLAGS_FIELD       0
-#define MWM_HINTS_DECORATIONS_FIELD 2
-#define MWM_HINTS_DECORATIONS       (1 << 1)
-#define MWM_DECOR_ALL               (1 << 0)
-#define MWM_DECOR_BORDER            (1 << 1)
-#define MWM_DECOR_TITLE             (1 << 3)
 
 /* enums */
 enum { CurNormal, CurResize, CurMove, CurLast }; /* cursor */
@@ -281,7 +274,6 @@ static void updatebarpos(Monitor *m);
 static void updatebars(void);
 static void updateclientlist(void);
 static int updategeom(void);
-static void updatemotifhints(Client *c);
 static void updatenumlockmask(void);
 static void updatesizehints(Client *c);
 static void updatestatus(void);
@@ -347,7 +339,7 @@ static void (*handler[LASTEvent]) (XEvent *) = {
     [ResizeRequest] = resizerequest,
 	[UnmapNotify] = unmapnotify
 };
-static Atom wmatom[WMLast], netatom[NetLast], xatom[XLast], motifatom;
+static Atom wmatom[WMLast], netatom[NetLast], xatom[XLast];
 static int running = 1;
 static Cur *cursor[CurLast];
 static Clr **scheme;
@@ -657,7 +649,6 @@ clientmessage(XEvent *e)
 	XSetWindowAttributes swa;
 	XClientMessageEvent *cme = &e->xclient;
 	Client *c = wintoclient(cme->window);
-	unsigned int i;
 
 	if (showsystray && cme->window == systray->win && cme->message_type == netatom[NetSystemTrayOP]) {
 		/* add systray icons */
@@ -689,7 +680,6 @@ clientmessage(XEvent *e)
 			updatesystrayicongeom(c, wa.width, wa.height);
 			XAddToSaveSet(dpy, c->win);
 			XSelectInput(dpy, c->win, StructureNotifyMask | PropertyChangeMask | ResizeRedirectMask);
-			/* added by mina to identify systray by picom */
 			XClassHint ch = {"dwmsystray", "dwmsystray"};
 			XSetClassHint(dpy, c->win, &ch);
 			XReparentWindow(dpy, c->win, systray->win, 0, 0);
@@ -717,14 +707,8 @@ clientmessage(XEvent *e)
 			setfullscreen(c, (cme->data.l[0] == 1 /* _NET_WM_STATE_ADD    */
 				|| (cme->data.l[0] == 2 /* _NET_WM_STATE_TOGGLE */ && !c->isfullscreen)));
 	} else if (cme->message_type == netatom[NetActiveWindow]) {
-		for (i = 0; i < LENGTH(tags) && !((1 << i) & c->tags); i++);
-		if (i < LENGTH(tags)) {
-			const Arg a = {.ui = 1 << i};
-			selmon = c->mon;
-			view(&a);
-			focus(c);
-			restack(selmon);
-		}
+		if (c != selmon->sel && !c->isurgent)
+			seturgent(c, 1);
 	}
 }
 
@@ -937,18 +921,17 @@ drawstatusbar(Monitor *m, int bh, char* stext) {
 	short isCode = 0;
 	char *text;
 	char *p;
-
-	len = strlen(stext) + 1 ;
+	len = strlen(stext) + 1;
 	if (!(text = (char*) malloc(sizeof(char)*len)))
 		die("malloc");
 	p = text;
-
 	i = -1, j = 0;
 	while (stext[++i])
 		if ((unsigned char)stext[i] >= ' ')
 			text[j++] = stext[i];
 	text[j] = '\0';
 
+/* Mina Changed from -1 to 0 i*/
 	/* compute width of the status text */
 	w = 0;
 	i = -1;
@@ -1049,7 +1032,7 @@ drawbar(Monitor *m)
 {
 	int x, w, tw = 0, stw = 0;
 	int boxs = drw->fonts->h / 9;
-	int boxw = drw->fonts->h / 6 + 2;
+	int boxw = drw->fonts->h / 6;
 	unsigned int i, occ = 0, urg = 0;
 	Client *c;
 
@@ -1093,7 +1076,6 @@ drawbar(Monitor *m)
 			if (m->sel->isfloating)
 				drw_rect(drw, x + boxs, boxs, boxw, boxw, m->sel->isfixed, 0);
 		} else {
-
 			drw_rect(drw, x, 0, w - 2 * sp, bh, 1, 1);
 		}
 	}
@@ -1525,9 +1507,6 @@ manage(Window w, XWindowAttributes *wa)
 	updatewindowtype(c);
 	updatesizehints(c);
 	updatewmhints(c);
-	updatemotifhints(c);
-	c->x = c->mon->mx + (c->mon->mw - WIDTH(c)) / 2;
-	c->y = c->mon->my + (c->mon->mh - HEIGHT(c)) / 2;
 	XSelectInput(dpy, w, EnterWindowMask|FocusChangeMask|PropertyChangeMask|StructureNotifyMask);
 	grabbuttons(c, 0);
 	if (!c->isfloating)
@@ -1754,8 +1733,6 @@ propertynotify(XEvent *e)
 		}
 		if (ev->atom == netatom[NetWMWindowType])
 			updatewindowtype(c);
-		if (ev->atom == motifatom)
-			updatemotifhints(c);
 	}
 }
 
@@ -2266,7 +2243,6 @@ setup(void)
 	netatom[NetWMWindowType] = XInternAtom(dpy, "_NET_WM_WINDOW_TYPE", False);
 	netatom[NetWMWindowTypeDialog] = XInternAtom(dpy, "_NET_WM_WINDOW_TYPE_DIALOG", False);
 	netatom[NetClientList] = XInternAtom(dpy, "_NET_CLIENT_LIST", False);
-	motifatom = XInternAtom(dpy, "_MOTIF_WM_HINTS", False);
 	xatom[Manager] = XInternAtom(dpy, "MANAGER", False);
 	xatom[Xembed] = XInternAtom(dpy, "_XEMBED", False);
 	xatom[XembedInfo] = XInternAtom(dpy, "_XEMBED_INFO", False);
@@ -2462,7 +2438,7 @@ togglebar(const Arg *arg)
 		else if (selmon->showbar) {
 			wc.y = vp;
 			if (!selmon->topbar)
-				wc.y = selmon->mh - bh + vp;
+				wc.y = selmon->mh - bh;
 		}
 		XConfigureWindow(dpy, systray->win, CWY, &wc);
 	}
@@ -2747,39 +2723,6 @@ updategeom(void)
 }
 
 void
-updatemotifhints(Client *c)
-{
-	Atom real;
-	int format;
-	unsigned char *p = NULL;
-	unsigned long n, extra;
-	unsigned long *motif;
-	int width, height;
-
-	if (!decorhints)
-		return;
-
-	if (XGetWindowProperty(dpy, c->win, motifatom, 0L, 5L, False, motifatom,
-	                       &real, &format, &n, &extra, &p) == Success && p != NULL) {
-		motif = (unsigned long*)p;
-		if (motif[MWM_HINTS_FLAGS_FIELD] & MWM_HINTS_DECORATIONS) {
-			width = WIDTH(c);
-			height = HEIGHT(c);
-
-			if (motif[MWM_HINTS_DECORATIONS_FIELD] & MWM_DECOR_ALL ||
-			    motif[MWM_HINTS_DECORATIONS_FIELD] & MWM_DECOR_BORDER ||
-			    motif[MWM_HINTS_DECORATIONS_FIELD] & MWM_DECOR_TITLE)
-				c->bw = c->oldbw = borderpx;
-			else
-				c->bw = c->oldbw = 0;
-
-			resize(c, c->x, c->y, width - (2*c->bw), height - (2*c->bw), 0);
-		}
-		XFree(p);
-	}
-}
-
-void
 updatenumlockmask(void)
 {
 	unsigned int i, j;
@@ -2924,14 +2867,15 @@ updatesystray(void)
 		wa.override_redirect = True;
 		wa.background_pixel  = scheme[SchemeNorm][ColBg].pixel;
 		XSelectInput(dpy, systray->win, SubstructureNotifyMask);
-/* Mina -- change for right click to be under bar and incporporate vp */
+		/* bh edit -- Mina */
 		XChangeProperty(dpy, systray->win, netatom[NetSystemTrayOrientation], XA_CARDINAL, 32,
-				PropModeReplace, (unsigned char *)&netatom[NetSystemTrayOrientationHorz], bh + vp);
+				PropModeReplace, (unsigned char *)&netatom[NetSystemTrayOrientationHorz], bh);
 		XChangeWindowAttributes(dpy, systray->win, CWEventMask|CWOverrideRedirect|CWBackPixel, &wa);
 		XMapRaised(dpy, systray->win);
 		XSetSelectionOwner(dpy, netatom[NetSystemTray], systray->win, CurrentTime);
+		/* bh edit -- Mina */
 		if (XGetSelectionOwner(dpy, netatom[NetSystemTray]) == systray->win) {
-			sendevent(root, xatom[Manager], StructureNotifyMask, CurrentTime, netatom[NetSystemTray], systray->win, 0, 0);
+			sendevent(root, xatom[Manager], StructureNotifyMask, CurrentTime, netatom[NetSystemTray], systray->win, 0, bh);
 			XSync(dpy, False);
 		}
 		else {
@@ -2948,7 +2892,7 @@ updatesystray(void)
 		XMapRaised(dpy, i->win);
 		w += systrayspacing;
 		i->x = w;
-		/* bh edit */
+		/* bh edit -- Mina */
 		XMoveResizeWindow(dpy, i->win, i->x, 0, i->w, i->h);
 		w += i->w;
 		if (i->mon != m)
